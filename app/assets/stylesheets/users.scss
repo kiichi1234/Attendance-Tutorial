@@ -1,31 +1,39 @@
-/* ユーザー情報テーブル */
-
 .user-table {
   vertical-align: middle;
   text-align: center;
 }
-
-/* ユーザー情報下ボタン */
 
 .btn-users-show {
   margin-top: -10px;
   margin-bottom: 10px;
 }
 
-/* ユーザー勤怠情報テーブル */
-
 #table-attendances {
   th {
     vertical-align: middle;
     text-align: center;
+    border: 1px solid #ddd;
   }
   td {
     vertical-align: middle;
     text-align: center;
+    border: 1px solid #ddd;
   }
 }
 
-/* 入力フォーム */
+#table-attendances th {
+  vertical-align: middle;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-left: 1px solid #ddd; /* 日付列の左側の罫線を追加 */
+}
+
+
+
+
+#table-attendances td:nth-child(8) {
+  width: 15px;
+}
 
 .label-signup {
   margin-top: 5px;
@@ -43,15 +51,9 @@
   margin-top: 10px;
 }
 
-/* ユーザー一覧ページ */
-
-#table-users {
-  td {
-    vertical-align: middle;
-  }  
+#table-users td {
+  vertical-align: middle;
 }
-
-/* 基本情報編集モーダルウインドウ */
 
 .label-basic-info {
   margin-top: 5px;
@@ -60,4 +62,23 @@
 .btn-basic-info {
   margin: 15px 0;
   width: 30%;
+}
+/* 土曜日のテキストの色を青にする */
+:root {
+  --saturday-color: blue;
+}
+
+/* 日曜日のテキストの色を赤にする */
+:root {
+  --sunday-color: red;
+}
+
+/* HTML内の土曜日のテキストに適用 */
+span[data-day="Saturday"] {
+  color: var(--saturday-color);
+}
+
+/* HTML内の日曜日のテキストに適用 */
+span[data-day="Sunday"] {
+  color: var(--sunday-color);
 }

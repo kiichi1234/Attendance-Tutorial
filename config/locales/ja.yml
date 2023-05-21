@@ -100,12 +100,15 @@ ja:
         one: 1年
         other: "%{count}年"
     prompts:
-      second: 秒
-      minute: 分
-      hour: 時
-      day: 日
-      month: 月
-      year: 年
+    second: 秒
+    minute: 分
+    hour: 時
+    day: 日
+    month: 月
+    year: 年
+  time:
+    hour: "%-l"
+    minute: "%M"
   errors:
     format: "%{attribute}%{message}"
     messages:
@@ -206,3 +209,4 @@ ja:
       short: "%m/%d %H:%M"
       time: "%H：%M"
     pm: 午後
+    

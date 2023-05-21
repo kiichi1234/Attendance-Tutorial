@@ -5,9 +5,14 @@ class UsersController < ApplicationController
   before_action :admin_user, only: [:destroy, :edit_basic_info, :update_basic_info]
   before_action :set_one_month, only: :show
 
-  def index
+ def index
+  if params[:search].blank?
     @users = User.paginate(page: params[:page])
+  else
+    @users = User.where("name LIKE ?", "%#{params[:search]}%").paginate(page: params[:page])
   end
+ end
+
 
   def show
   @worked_sum = @attendances.where.not(started_at: nil).count
